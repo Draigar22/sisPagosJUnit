@@ -14,6 +14,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
     <junit.jupiter.version>5.6.2</junit.jupiter.version>
+
     <sonar.projectKey>Draigar22_sisPagosJUnit</sonar.projectKey>
     <sonar.organization>draigar22</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>

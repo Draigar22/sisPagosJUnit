@@ -49,7 +49,7 @@ public class Empleado {
         int n;
         if (nEmpleado.matches("^\\d+$")){
             n= Integer.parseInt(nEmpleado);
-            if (n>000 && n < 1000 ){
+            if (n>0 && n < 1000 ){
                 setNumero_empleado(n);
                 return;
             }
@@ -73,7 +73,7 @@ public class Empleado {
         int n;
         if (mesesT.matches("^\\d+$")){
             n= Integer.parseInt(mesesT);
-            if (n>=000 && n < 1000 ){
+            if (n>=0 && n < 1000 ){
                 setMeses_trabajo(n);
                 return;
             }

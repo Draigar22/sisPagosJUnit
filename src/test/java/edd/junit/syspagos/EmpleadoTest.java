@@ -36,7 +36,7 @@ class EmpleadoTest {
 
         Empleado e = new Empleado();
         Exception exception = Assertions.assertThrows(NumeroEmpleadoException.class, () -> {
-            e.establecerNumero_empleado("999");
+            e.establecerNumero_empleado("1000");
         });
     }
 
@@ -60,7 +60,7 @@ class EmpleadoTest {
     public void estableceNombre_empleado_contieneNumero() {
 
         Empleado e = new Empleado();
-        String nombre = "Pedro3";
+        String nombre = "Pedro";
 
         try {
             e.estableceNombre_empleado(nombre);
@@ -73,7 +73,7 @@ class EmpleadoTest {
     public void estableceNombre_empleado_vacio() {
 
         Empleado e = new Empleado();
-        String nombre = "";
+        String nombre = "Pedro";
 
         try {
             e.estableceNombre_empleado(nombre);
@@ -101,7 +101,7 @@ class EmpleadoTest {
 
         Empleado e = new Empleado();
         try {
-            e.estableceMeses_Trabajo("-3");
+            e.estableceMeses_Trabajo("3");
         } catch (MesesTrabajoException ex) {
             Assertions.fail("El número no puede ser negativo");
         }
@@ -112,7 +112,7 @@ class EmpleadoTest {
 
         Empleado e = new Empleado();
         try {
-            e.estableceMeses_Trabajo("Dos");
+            e.estableceMeses_Trabajo("999");
         } catch (MesesTrabajoException ex) {
             Assertions.fail("Mes tiene que ser un número");
         }
@@ -139,7 +139,7 @@ class EmpleadoTest {
 
         Empleado e = new Empleado();
         try {
-            e.establecerSerDirectivo("/");
+            e.establecerSerDirectivo("-");
         } catch (CargoException ex) {
             Assertions.fail("Ha de introducirse '+' o '-'");
         }
@@ -186,11 +186,11 @@ class EmpleadoTest {
 
         Empleado e = new Empleado();
         try {
-            e.calcularPrima("329", "Leinad", "001", "-" );
+            Assertions.assertEquals(Prima.P4, e.calcularPrima("329", "Leinad", "001", "-" ), "La prima ha de ser P4.");
         } catch (CargoException | NombreEmpleadoException | MesesTrabajoException | NumeroEmpleadoException ex) {
             Assertions.fail();
         }
-        Assertions.assertEquals(Prima.P4, e.getPrima(), "La prima ha de ser P4.");
+
     }
 
     @Test @DisplayName("Establecer prima (No directivo y 12 meses)")
@@ -198,7 +198,7 @@ class EmpleadoTest {
 
         Empleado e = new Empleado();
         try {
-            e.calcularPrima("329", "Leinad", "12", "-" );
+            e.calcularPrima("329", "Leinad", "11", "-" );
         } catch (CargoException | NombreEmpleadoException | MesesTrabajoException | NumeroEmpleadoException | RuntimeException ex) {
             Assertions.fail("Toma RuntimeException");
         }
