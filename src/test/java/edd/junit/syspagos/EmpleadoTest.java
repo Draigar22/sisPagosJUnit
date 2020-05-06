@@ -190,7 +190,7 @@ class EmpleadoTest {
         } catch (CargoException | NombreEmpleadoException | MesesTrabajoException | NumeroEmpleadoException ex) {
             Assertions.fail();
         }
-        Assertions.assertEquals(Prima.P4, e.getPrima(), "La prima ha de ser P4");
+        Assertions.assertEquals(Prima.P4, e.getPrima(), "La prima ha de ser P4.");
     }
 
 }
