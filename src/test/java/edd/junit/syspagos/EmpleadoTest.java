@@ -60,7 +60,7 @@ class EmpleadoTest {
     public void estableceNombre_empleado_contieneNumero() {
 
         Empleado e = new Empleado();
-        String nombre = "Pedro4";
+        String nombre = "Pedro3";
 
         try {
             e.estableceNombre_empleado(nombre);
@@ -73,7 +73,7 @@ class EmpleadoTest {
     public void estableceNombre_empleado_vacio() {
 
         Empleado e = new Empleado();
-        String nombre = "Pedro";
+        String nombre = "";
 
         try {
             e.estableceNombre_empleado(nombre);
@@ -139,7 +139,7 @@ class EmpleadoTest {
 
         Empleado e = new Empleado();
         try {
-            e.establecerSerDirectivo("a");
+            e.establecerSerDirectivo("/");
         } catch (CargoException ex) {
             Assertions.fail("Ha de introducirse '+' o '-'");
         }
@@ -191,6 +191,17 @@ class EmpleadoTest {
             Assertions.fail();
         }
         Assertions.assertEquals(Prima.P4, e.getPrima(), "La prima ha de ser P4.");
+    }
+
+    @Test @DisplayName("Establecer prima (No directivo y 12 meses)")
+    public void calcularPrima_correcto_otro() {
+
+        Empleado e = new Empleado();
+        try {
+            e.calcularPrima("329", "Leinad", "12", "-" );
+        } catch (CargoException | NombreEmpleadoException | MesesTrabajoException | NumeroEmpleadoException | RuntimeException ex) {
+            Assertions.fail("Toma RuntimeException");
+        }
     }
 
 }
