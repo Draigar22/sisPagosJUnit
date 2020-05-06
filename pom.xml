@@ -17,7 +17,7 @@
     <sonar.projectKey>Draigar22_sisPagosJUnit</sonar.projectKey>
     <sonar.organization>draigar22</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-    <sonar.login>2904a6458ef77840560b66f354c21e5d0ff4016d</sonar.login>
+    <sonar.login>4936b8f0133dbbe813108f2868c1a6329ed703c9</sonar.login>
   </properties>
 
   <dependencies>
